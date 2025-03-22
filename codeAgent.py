@@ -11,6 +11,26 @@ import os
 
 # code to track the progress and logs of llm calls, using lang fuse and open telemetry
 
+# so OpenTelemetry is like a tool through which u can track logs and background things happening in ur code 
+
+# In software engineering, instrumentation refers to the process of adding code to a software application to monitor its behavior and performance. This process enables the collection of data such as metrics, events, logs, and traces, which can be used to understand the application's state and diagnose errors. Instrumentation is crucial for performance analysis, testing, error detection, and optimization, allowing developers to troubleshoot programming and logical errors in code and improve application performance and reliability.
+
+# so opentelemetry does this ...
+
+# When your AI agent runs:
+
+# The instrumentation automatically creates spans for each operation
+
+# These spans are collected into traces that show the complete journey
+
+# The span processor handles each span as it's completed
+
+# The exporter sends this data to your monitoring system (Langfuse)
+
+# You can then view dashboards in Langfuse to see what your AI agent did, how long it took, and if there were any problems
+
+# This gives you visibility into your AI agent's behavior without having to manually add tracking code throughout your application.
+
 from opentelemetry.sdk.trace import TracerProvider
 from openinference.instrumentation.smolagents import SmolagentsInstrumentor
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
@@ -76,6 +96,8 @@ agent.run(
     If we start right now, at what time will the party be ready?
     """
 )
+
+
 
 # example of code agent using smolAgents
 
